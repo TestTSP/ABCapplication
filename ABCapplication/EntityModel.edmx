@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="testdemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Cust_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Contact" Type="bigint" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="20" />
+          <Property Name="citycode" Type="int" />
+        </EntityType>
+        <EntityType Name="Login1">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="OrderDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="cust_ID" />
+          </Key>
+          <Property Name="cust_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cust_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblDatabaseServers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblDatabaseServers">
+          <Key>
+            <PropertyRef Name="DataSourceId" />
+            <PropertyRef Name="SrcDeviceId" />
+            <PropertyRef Name="SrcId" />
+          </Key>
+          <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="SrcDeviceId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="SrcId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="InstallLocation" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Version" Type="varchar" MaxLength="64" />
+          <Property Name="Edition" Type="nvarchar" MaxLength="256" />
+          <Property Name="ServicePack" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsIntegratedSecurity" Type="bit" />
+          <Property Name="DataPath" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="256" />
+          <Property Name="State" Type="nvarchar" MaxLength="256" />
+          <Property Name="StartMode" Type="nvarchar" MaxLength="256" />
+          <Property Name="Clustered" Type="bit" />
+          <Property Name="InstanceId" Type="nvarchar" MaxLength="256" />
+          <Property Name="InstanceName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Sku" Type="nvarchar" MaxLength="256" />
+          <Property Name="SqlServiceType" Type="int" />
+          <Property Name="Environment" Type="nvarchar" MaxLength="256" />
+          <Property Name="Isv" Type="nvarchar" MaxLength="256" />
+          <Property Name="Id" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDevices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="SrcId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Site" Type="varchar" MaxLength="32" />
+          <Property Name="Type" Type="nvarchar" MaxLength="256" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="DnsHostName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Fqdn" Type="nvarchar" MaxLength="512" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="256" />
+          <Property Name="PrimaryUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="LastBoot" Type="datetime" />
+          <Property Name="LastScan" Type="datetime" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="256" />
+          <Property Name="Model" Type="nvarchar" MaxLength="256" />
+          <Property Name="TotalMemoryMb" Type="bigint" />
+          <Property Name="TotalDiskSpaceMB" Type="bigint" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="256" />
+          <Property Name="Virtual" Type="bit" />
+          <Property Name="WmiStatus" Type="nvarchar" MaxLength="4000" />
+          <Property Name="SamAccountName" Type="nvarchar" MaxLength="256" />
+          <Property Name="SamAccountType" Type="int" />
+          <Property Name="Enabled" Type="bit" />
+          <Property Name="PwdRequired" Type="bit" />
+          <Property Name="PwdCanChange" Type="bit" />
+          <Property Name="PwdExpires" Type="bit" />
+          <Property Name="NormalAccount" Type="bit" />
+          <Property Name="BiosCaption" Type="nvarchar" MaxLength="256" />
+          <Property Name="BiosManufacturer" Type="nvarchar" MaxLength="256" />
+          <Property Name="BiosReleaseDate" Type="datetime" />
+          <Property Name="BiosSerialNumber" Type="nvarchar" MaxLength="128" />
+          <Property Name="BiosSlicTable" Type="int" />
+          <Property Name="BiosMsdmTable" Type="int" />
+          <Property Name="BiosWindowsEdition" Type="nvarchar" MaxLength="256" />
+          <Property Name="BiosVersion" Type="nvarchar" MaxLength="128" />
+          <Property Name="BaseBoardManufacturer" Type="nvarchar" MaxLength="256" />
+          <Property Name="BaseBoardProduct" Type="nvarchar" MaxLength="256" />
+          <Property Name="BaseBoardSerialNumber" Type="nvarchar" MaxLength="128" />
+          <Property Name="BaseBoardVersion" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsArchitectureBits" Type="tinyint" />
+          <Property Name="OsFamily" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsInstallDate" Type="datetime" />
+          <Property Name="OsLanguage" Type="bigint" />
+          <Property Name="OsManufacturer" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsName" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsRegisteredUser" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsSerialNumber" Type="nvarchar" MaxLength="256" />
+          <Property Name="OsServicePackMajorVersion" Type="nvarchar" MaxLength="640" />
+          <Property Name="OsServicePackMinorVersion" Type="nvarchar" MaxLength="64" />
+          <Property Name="OsSku" Type="bigint" />
+          <Property Name="OsVersion" Type="nvarchar" MaxLength="256" />
+          <Property Name="AdCn" Type="nvarchar" MaxLength="64" />
+          <Property Name="AdCompany" Type="nvarchar" MaxLength="64" />
+          <Property Name="AdCreated" Type="datetime" />
+          <Property Name="AdDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AdDistinguishedName" Type="nvarchar" MaxLength="4000" />
+          <Property Name="AdLastLogon" Type="datetime" />
+          <Property Name="AdLocation" Type="nvarchar" MaxLength="1024" />
+          <Property Name="AdLogonCount" Type="int" />
+          <Property Name="AdModified" Type="datetime" />
+          <Property Name="AdCountryCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="AdPwdLastSet" Type="datetime" />
+          <Property Name="AdUserPrincipalName" Type="nvarchar" MaxLength="1048" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblServices">
+          <Key>
+            <PropertyRef Name="DataSourceId" />
+            <PropertyRef Name="SrcDeviceId" />
+          </Key>
+          <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="SrcDeviceId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="InstallLocation" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Account" Type="nvarchar" MaxLength="256" />
+          <Property Name="Started" Type="bit" />
+          <Property Name="StartMode" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <Function Name="sp_city" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_devices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="testdemoModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login1" EntityType="Self.Login1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDevices" EntityType="Self.tblDevices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDatabaseServers" EntityType="Self.tblDatabaseServers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblDatabaseServers].[DataSourceId] AS [DataSourceId], 
+    [tblDatabaseServers].[SrcDeviceId] AS [SrcDeviceId], 
+    [tblDatabaseServers].[SrcId] AS [SrcId], 
+    [tblDatabaseServers].[InstallLocation] AS [InstallLocation], 
+    [tblDatabaseServers].[ProductName] AS [ProductName], 
+    [tblDatabaseServers].[Version] AS [Version], 
+    [tblDatabaseServers].[Edition] AS [Edition], 
+    [tblDatabaseServers].[ServicePack] AS [ServicePack], 
+    [tblDatabaseServers].[IsIntegratedSecurity] AS [IsIntegratedSecurity], 
+    [tblDatabaseServers].[DataPath] AS [DataPath], 
+    [tblDatabaseServers].[ServiceName] AS [ServiceName], 
+    [tblDatabaseServers].[State] AS [State], 
+    [tblDatabaseServers].[StartMode] AS [StartMode], 
+    [tblDatabaseServers].[Clustered] AS [Clustered], 
+    [tblDatabaseServers].[InstanceId] AS [InstanceId], 
+    [tblDatabaseServers].[InstanceName] AS [InstanceName], 
+    [tblDatabaseServers].[Sku] AS [Sku], 
+    [tblDatabaseServers].[SqlServiceType] AS [SqlServiceType], 
+    [tblDatabaseServers].[Environment] AS [Environment], 
+    [tblDatabaseServers].[Isv] AS [Isv], 
+    [tblDatabaseServers].[Id] AS [Id]
+    FROM [dbo].[tblDatabaseServers] AS [tblDatabaseServers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tblServices" EntityType="Self.tblServices" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tblServices].[DataSourceId] AS [DataSourceId], 
+    [tblServices].[SrcDeviceId] AS [SrcDeviceId], 
+    [tblServices].[Name] AS [Name], 
+    [tblServices].[DisplayName] AS [DisplayName], 
+    [tblServices].[Description] AS [Description], 
+    [tblServices].[InstallLocation] AS [InstallLocation], 
+    [tblServices].[Account] AS [Account], 
+    [tblServices].[Started] AS [Started], 
+    [tblServices].[StartMode] AS [StartMode], 
+    [tblServices].[Status] AS [Status]
+    FROM [dbo].[tblServices] AS [tblServices]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testdemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Cust_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="Int64" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="citycode" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="cust_ID" />
+          </Key>
+          <Property Name="cust_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cust_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblDatabaseServer">
+          <Key>
+            <PropertyRef Name="DataSourceId" />
+            <PropertyRef Name="SrcDeviceId" />
+            <PropertyRef Name="SrcId" />
+          </Key>
+          <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SrcDeviceId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SrcId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InstallLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Version" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Edition" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ServicePack" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="IsIntegratedSecurity" Type="Boolean" />
+          <Property Name="DataPath" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="StartMode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Clustered" Type="Boolean" />
+          <Property Name="InstanceId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="InstanceName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Sku" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SqlServiceType" Type="Int32" />
+          <Property Name="Environment" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Isv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblService">
+          <Key>
+            <PropertyRef Name="DataSourceId" />
+            <PropertyRef Name="SrcDeviceId" />
+          </Key>
+          <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SrcDeviceId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="InstallLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Started" Type="Boolean" />
+          <Property Name="StartMode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="testdemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+          <EntitySet Name="tblDatabaseServers" EntityType="Self.tblDatabaseServer" />
+          <EntitySet Name="tblServices" EntityType="Self.tblService" />
+          <FunctionImport Name="sp_city" ReturnType="Collection(testdemoModel.sp_city_Result)" />
+          <FunctionImport Name="sp_devices" ReturnType="Collection(testdemoModel.sp_devices_Result)" />
+          <EntitySet Name="Login1" EntityType="testdemoModel.Login1" />
+          <EntitySet Name="tblDevices" EntityType="testdemoModel.tblDevice" />
+        </EntityContainer>
+        <ComplexType Name="sp_city_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="countrycode" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="population" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_devices_Result">
+          <Property Type="String" Name="DataSourceId" Nullable="false" MaxLength="32" />
+          <Property Type="String" Name="SrcId" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Site" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="DnsHostName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Fqdn" Nullable="true" MaxLength="512" />
+          <Property Type="String" Name="Domain" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="PrimaryUserName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+          <Property Type="DateTime" Name="LastBoot" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="LastScan" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Model" Nullable="true" MaxLength="256" />
+          <Property Type="Int64" Name="TotalMemoryMb" Nullable="true" />
+          <Property Type="Int64" Name="TotalDiskSpaceMB" Nullable="true" />
+          <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="256" />
+          <Property Type="Boolean" Name="Virtual" Nullable="true" />
+          <Property Type="String" Name="WmiStatus" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="SamAccountName" Nullable="true" MaxLength="256" />
+          <Property Type="Int32" Name="SamAccountType" Nullable="true" />
+          <Property Type="Boolean" Name="Enabled" Nullable="true" />
+          <Property Type="Boolean" Name="PwdRequired" Nullable="true" />
+          <Property Type="Boolean" Name="PwdCanChange" Nullable="true" />
+          <Property Type="Boolean" Name="PwdExpires" Nullable="true" />
+          <Property Type="Boolean" Name="NormalAccount" Nullable="true" />
+          <Property Type="String" Name="BiosCaption" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="BiosManufacturer" Nullable="true" MaxLength="256" />
+          <Property Type="DateTime" Name="BiosReleaseDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="BiosSerialNumber" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="BiosSlicTable" Nullable="true" />
+          <Property Type="Int32" Name="BiosMsdmTable" Nullable="true" />
+          <Property Type="String" Name="BiosWindowsEdition" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="BiosVersion" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="BaseBoardManufacturer" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="BaseBoardProduct" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="BaseBoardSerialNumber" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="BaseBoardVersion" Nullable="true" MaxLength="256" />
+          <Property Type="Byte" Name="OsArchitectureBits" Nullable="true" />
+          <Property Type="String" Name="OsFamily" Nullable="true" MaxLength="256" />
+          <Property Type="DateTime" Name="OsInstallDate" Nullable="true" Precision="23" />
+          <Property Type="Int64" Name="OsLanguage" Nullable="true" />
+          <Property Type="String" Name="OsManufacturer" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="OsName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="OsRegisteredUser" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="OsSerialNumber" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="OsServicePackMajorVersion" Nullable="true" MaxLength="640" />
+          <Property Type="String" Name="OsServicePackMinorVersion" Nullable="true" MaxLength="64" />
+          <Property Type="Int64" Name="OsSku" Nullable="true" />
+          <Property Type="String" Name="OsVersion" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="AdCn" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="AdCompany" Nullable="true" MaxLength="64" />
+          <Property Type="DateTime" Name="AdCreated" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AdDescription" Nullable="true" MaxLength="1024" />
+          <Property Type="String" Name="AdDistinguishedName" Nullable="true" MaxLength="4000" />
+          <Property Type="DateTime" Name="AdLastLogon" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AdLocation" Nullable="true" MaxLength="1024" />
+          <Property Type="Int32" Name="AdLogonCount" Nullable="true" />
+          <Property Type="DateTime" Name="AdModified" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AdCountryCode" Nullable="true" MaxLength="64" />
+          <Property Type="DateTime" Name="AdPwdLastSet" Nullable="true" Precision="23" />
+          <Property Type="String" Name="AdUserPrincipalName" Nullable="true" MaxLength="1048" />
+          <Property Type="Int32" Name="Id" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Login1">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblDevice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="DataSourceId" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="SrcId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DnsHostName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Fqdn" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="LastBoot" Type="DateTime" Precision="3" />
+          <Property Name="LastScan" Type="DateTime" Precision="3" />
+          <Property Name="Manufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="TotalMemoryMb" Type="Int64" />
+          <Property Name="TotalDiskSpaceMB" Type="Int64" />
+          <Property Name="SerialNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Virtual" Type="Boolean" />
+          <Property Name="WmiStatus" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="SamAccountName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SamAccountType" Type="Int32" />
+          <Property Name="Enabled" Type="Boolean" />
+          <Property Name="PwdRequired" Type="Boolean" />
+          <Property Name="PwdCanChange" Type="Boolean" />
+          <Property Name="PwdExpires" Type="Boolean" />
+          <Property Name="NormalAccount" Type="Boolean" />
+          <Property Name="BiosCaption" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="BiosManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="BiosReleaseDate" Type="DateTime" Precision="3" />
+          <Property Name="BiosSerialNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="BiosSlicTable" Type="Int32" />
+          <Property Name="BiosMsdmTable" Type="Int32" />
+          <Property Name="BiosWindowsEdition" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="BiosVersion" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="BaseBoardManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="BaseBoardProduct" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="BaseBoardSerialNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="BaseBoardVersion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsArchitectureBits" Type="Byte" />
+          <Property Name="OsFamily" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsInstallDate" Type="DateTime" Precision="3" />
+          <Property Name="OsLanguage" Type="Int64" />
+          <Property Name="OsManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsRegisteredUser" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsSerialNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="OsServicePackMajorVersion" Type="String" MaxLength="640" FixedLength="false" Unicode="true" />
+          <Property Name="OsServicePackMinorVersion" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="OsSku" Type="Int64" />
+          <Property Name="OsVersion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="AdCn" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="AdCompany" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="AdCreated" Type="DateTime" Precision="3" />
+          <Property Name="AdDescription" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="AdDistinguishedName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="AdLastLogon" Type="DateTime" Precision="3" />
+          <Property Name="AdLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="AdLogonCount" Type="Int32" />
+          <Property Name="AdModified" Type="DateTime" Precision="3" />
+          <Property Name="AdCountryCode" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="AdPwdLastSet" Type="DateTime" Precision="3" />
+          <Property Name="AdUserPrincipalName" Type="String" MaxLength="1048" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testdemoModelStoreContainer" CdmEntityContainer="testdemoEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="testdemoModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="citycode" ColumnName="citycode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="testdemoModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="testdemoModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="cust_ID" ColumnName="cust_ID" />
+                <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDatabaseServers">
+            <EntityTypeMapping TypeName="testdemoModel.tblDatabaseServer">
+              <MappingFragment StoreEntitySet="tblDatabaseServers">
+                <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+                <ScalarProperty Name="SrcDeviceId" ColumnName="SrcDeviceId" />
+                <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+                <ScalarProperty Name="InstallLocation" ColumnName="InstallLocation" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="ServicePack" ColumnName="ServicePack" />
+                <ScalarProperty Name="IsIntegratedSecurity" ColumnName="IsIntegratedSecurity" />
+                <ScalarProperty Name="DataPath" ColumnName="DataPath" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StartMode" ColumnName="StartMode" />
+                <ScalarProperty Name="Clustered" ColumnName="Clustered" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+                <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+                <ScalarProperty Name="Sku" ColumnName="Sku" />
+                <ScalarProperty Name="SqlServiceType" ColumnName="SqlServiceType" />
+                <ScalarProperty Name="Environment" ColumnName="Environment" />
+                <ScalarProperty Name="Isv" ColumnName="Isv" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblServices">
+            <EntityTypeMapping TypeName="testdemoModel.tblService">
+              <MappingFragment StoreEntitySet="tblServices">
+                <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+                <ScalarProperty Name="SrcDeviceId" ColumnName="SrcDeviceId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InstallLocation" ColumnName="InstallLocation" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Started" ColumnName="Started" />
+                <ScalarProperty Name="StartMode" ColumnName="StartMode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_city" FunctionName="testdemoModel.Store.sp_city">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="testdemoModel.sp_city_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+                <ScalarProperty Name="population" ColumnName="population" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_devices" FunctionName="testdemoModel.Store.sp_devices">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="testdemoModel.sp_devices_Result">
+                <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+                <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DnsHostName" ColumnName="DnsHostName" />
+                <ScalarProperty Name="Fqdn" ColumnName="Fqdn" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LastBoot" ColumnName="LastBoot" />
+                <ScalarProperty Name="LastScan" ColumnName="LastScan" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="TotalMemoryMb" ColumnName="TotalMemoryMb" />
+                <ScalarProperty Name="TotalDiskSpaceMB" ColumnName="TotalDiskSpaceMB" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Virtual" ColumnName="Virtual" />
+                <ScalarProperty Name="WmiStatus" ColumnName="WmiStatus" />
+                <ScalarProperty Name="SamAccountName" ColumnName="SamAccountName" />
+                <ScalarProperty Name="SamAccountType" ColumnName="SamAccountType" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="PwdRequired" ColumnName="PwdRequired" />
+                <ScalarProperty Name="PwdCanChange" ColumnName="PwdCanChange" />
+                <ScalarProperty Name="PwdExpires" ColumnName="PwdExpires" />
+                <ScalarProperty Name="NormalAccount" ColumnName="NormalAccount" />
+                <ScalarProperty Name="BiosCaption" ColumnName="BiosCaption" />
+                <ScalarProperty Name="BiosManufacturer" ColumnName="BiosManufacturer" />
+                <ScalarProperty Name="BiosReleaseDate" ColumnName="BiosReleaseDate" />
+                <ScalarProperty Name="BiosSerialNumber" ColumnName="BiosSerialNumber" />
+                <ScalarProperty Name="BiosSlicTable" ColumnName="BiosSlicTable" />
+                <ScalarProperty Name="BiosMsdmTable" ColumnName="BiosMsdmTable" />
+                <ScalarProperty Name="BiosWindowsEdition" ColumnName="BiosWindowsEdition" />
+                <ScalarProperty Name="BiosVersion" ColumnName="BiosVersion" />
+                <ScalarProperty Name="BaseBoardManufacturer" ColumnName="BaseBoardManufacturer" />
+                <ScalarProperty Name="BaseBoardProduct" ColumnName="BaseBoardProduct" />
+                <ScalarProperty Name="BaseBoardSerialNumber" ColumnName="BaseBoardSerialNumber" />
+                <ScalarProperty Name="BaseBoardVersion" ColumnName="BaseBoardVersion" />
+                <ScalarProperty Name="OsArchitectureBits" ColumnName="OsArchitectureBits" />
+                <ScalarProperty Name="OsFamily" ColumnName="OsFamily" />
+                <ScalarProperty Name="OsInstallDate" ColumnName="OsInstallDate" />
+                <ScalarProperty Name="OsLanguage" ColumnName="OsLanguage" />
+                <ScalarProperty Name="OsManufacturer" ColumnName="OsManufacturer" />
+                <ScalarProperty Name="OsName" ColumnName="OsName" />
+                <ScalarProperty Name="OsRegisteredUser" ColumnName="OsRegisteredUser" />
+                <ScalarProperty Name="OsSerialNumber" ColumnName="OsSerialNumber" />
+                <ScalarProperty Name="OsServicePackMajorVersion" ColumnName="OsServicePackMajorVersion" />
+                <ScalarProperty Name="OsServicePackMinorVersion" ColumnName="OsServicePackMinorVersion" />
+                <ScalarProperty Name="OsSku" ColumnName="OsSku" />
+                <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+                <ScalarProperty Name="AdCn" ColumnName="AdCn" />
+                <ScalarProperty Name="AdCompany" ColumnName="AdCompany" />
+                <ScalarProperty Name="AdCreated" ColumnName="AdCreated" />
+                <ScalarProperty Name="AdDescription" ColumnName="AdDescription" />
+                <ScalarProperty Name="AdDistinguishedName" ColumnName="AdDistinguishedName" />
+                <ScalarProperty Name="AdLastLogon" ColumnName="AdLastLogon" />
+                <ScalarProperty Name="AdLocation" ColumnName="AdLocation" />
+                <ScalarProperty Name="AdLogonCount" ColumnName="AdLogonCount" />
+                <ScalarProperty Name="AdModified" ColumnName="AdModified" />
+                <ScalarProperty Name="AdCountryCode" ColumnName="AdCountryCode" />
+                <ScalarProperty Name="AdPwdLastSet" ColumnName="AdPwdLastSet" />
+                <ScalarProperty Name="AdUserPrincipalName" ColumnName="AdUserPrincipalName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Login1">
+            <EntityTypeMapping TypeName="testdemoModel.Login1">
+              <MappingFragment StoreEntitySet="Login1">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDevices">
+            <EntityTypeMapping TypeName="testdemoModel.tblDevice">
+              <MappingFragment StoreEntitySet="tblDevices">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AdUserPrincipalName" ColumnName="AdUserPrincipalName" />
+                <ScalarProperty Name="AdPwdLastSet" ColumnName="AdPwdLastSet" />
+                <ScalarProperty Name="AdCountryCode" ColumnName="AdCountryCode" />
+                <ScalarProperty Name="AdModified" ColumnName="AdModified" />
+                <ScalarProperty Name="AdLogonCount" ColumnName="AdLogonCount" />
+                <ScalarProperty Name="AdLocation" ColumnName="AdLocation" />
+                <ScalarProperty Name="AdLastLogon" ColumnName="AdLastLogon" />
+                <ScalarProperty Name="AdDistinguishedName" ColumnName="AdDistinguishedName" />
+                <ScalarProperty Name="AdDescription" ColumnName="AdDescription" />
+                <ScalarProperty Name="AdCreated" ColumnName="AdCreated" />
+                <ScalarProperty Name="AdCompany" ColumnName="AdCompany" />
+                <ScalarProperty Name="AdCn" ColumnName="AdCn" />
+                <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+                <ScalarProperty Name="OsSku" ColumnName="OsSku" />
+                <ScalarProperty Name="OsServicePackMinorVersion" ColumnName="OsServicePackMinorVersion" />
+                <ScalarProperty Name="OsServicePackMajorVersion" ColumnName="OsServicePackMajorVersion" />
+                <ScalarProperty Name="OsSerialNumber" ColumnName="OsSerialNumber" />
+                <ScalarProperty Name="OsRegisteredUser" ColumnName="OsRegisteredUser" />
+                <ScalarProperty Name="OsName" ColumnName="OsName" />
+                <ScalarProperty Name="OsManufacturer" ColumnName="OsManufacturer" />
+                <ScalarProperty Name="OsLanguage" ColumnName="OsLanguage" />
+                <ScalarProperty Name="OsInstallDate" ColumnName="OsInstallDate" />
+                <ScalarProperty Name="OsFamily" ColumnName="OsFamily" />
+                <ScalarProperty Name="OsArchitectureBits" ColumnName="OsArchitectureBits" />
+                <ScalarProperty Name="BaseBoardVersion" ColumnName="BaseBoardVersion" />
+                <ScalarProperty Name="BaseBoardSerialNumber" ColumnName="BaseBoardSerialNumber" />
+                <ScalarProperty Name="BaseBoardProduct" ColumnName="BaseBoardProduct" />
+                <ScalarProperty Name="BaseBoardManufacturer" ColumnName="BaseBoardManufacturer" />
+                <ScalarProperty Name="BiosVersion" ColumnName="BiosVersion" />
+                <ScalarProperty Name="BiosWindowsEdition" ColumnName="BiosWindowsEdition" />
+                <ScalarProperty Name="BiosMsdmTable" ColumnName="BiosMsdmTable" />
+                <ScalarProperty Name="BiosSlicTable" ColumnName="BiosSlicTable" />
+                <ScalarProperty Name="BiosSerialNumber" ColumnName="BiosSerialNumber" />
+                <ScalarProperty Name="BiosReleaseDate" ColumnName="BiosReleaseDate" />
+                <ScalarProperty Name="BiosManufacturer" ColumnName="BiosManufacturer" />
+                <ScalarProperty Name="BiosCaption" ColumnName="BiosCaption" />
+                <ScalarProperty Name="NormalAccount" ColumnName="NormalAccount" />
+                <ScalarProperty Name="PwdExpires" ColumnName="PwdExpires" />
+                <ScalarProperty Name="PwdCanChange" ColumnName="PwdCanChange" />
+                <ScalarProperty Name="PwdRequired" ColumnName="PwdRequired" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="SamAccountType" ColumnName="SamAccountType" />
+                <ScalarProperty Name="SamAccountName" ColumnName="SamAccountName" />
+                <ScalarProperty Name="WmiStatus" ColumnName="WmiStatus" />
+                <ScalarProperty Name="Virtual" ColumnName="Virtual" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="TotalDiskSpaceMB" ColumnName="TotalDiskSpaceMB" />
+                <ScalarProperty Name="TotalMemoryMb" ColumnName="TotalMemoryMb" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="LastScan" ColumnName="LastScan" />
+                <ScalarProperty Name="LastBoot" ColumnName="LastBoot" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Fqdn" ColumnName="Fqdn" />
+                <ScalarProperty Name="DnsHostName" ColumnName="DnsHostName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+                <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

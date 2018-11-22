@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testdemoModelStoreContainer" CdmEntityContainer="testdemoEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="testdemoModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="citycode" ColumnName="citycode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="testdemoModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="testdemoModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="cust_ID" ColumnName="cust_ID" />
+          <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentInfoes">
+      <EntityTypeMapping TypeName="testdemoModel.StudentInfo">
+        <MappingFragment StoreEntitySet="StudentInfo">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Std" ColumnName="Std" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReconLiftandShift_InputData">
+      <EntityTypeMapping TypeName="testdemoModel.ReconLiftandShift_InputData">
+        <MappingFragment StoreEntitySet="ReconLiftandShift_InputData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+          <ScalarProperty Name="CurrentOperatingSystem" ColumnName="CurrentOperatingSystem" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="VMType" ColumnName="VMType" />
+          <ScalarProperty Name="OSType" ColumnName="OSType" />
+          <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+          <ScalarProperty Name="Environment" ColumnName="Environment" />
+          <ScalarProperty Name="Cores" ColumnName="Cores" />
+          <ScalarProperty Name="SystemMemory_GB_" ColumnName="SystemMemory(GB)" />
+          <ScalarProperty Name="NICCount" ColumnName="NICCount" />
+          <ScalarProperty Name="IOPS" ColumnName="IOPS" />
+          <ScalarProperty Name="MaxNetworkThroughputMB_S" ColumnName="MaxNetworkThroughputMB/S" />
+          <ScalarProperty Name="Storage_GB_" ColumnName="Storage(GB)" />
+          <ScalarProperty Name="Used_Storage_GB_" ColumnName="Used Storage(GB)" />
+          <ScalarProperty Name="C_MaxCPUUtilization" ColumnName="%MaxCPUUtilization" />
+          <ScalarProperty Name="MAXCoreUtilizationCount" ColumnName="MAXCoreUtilizationCount" />
+          <ScalarProperty Name="MaxRAM_" ColumnName="MaxRAM%" />
+          <ScalarProperty Name="MAXUtilizedRAM__GB_" ColumnName="MAXUtilizedRAM (GB)" />
+          <ScalarProperty Name="AvgCPUUtilization_" ColumnName="AvgCPUUtilization%" />
+          <ScalarProperty Name="AvgCPUUtilization_95per" ColumnName="AvgCPUUtilization%95per" />
+          <ScalarProperty Name="AvgCoreUtilizationCount" ColumnName="AvgCoreUtilizationCount" />
+          <ScalarProperty Name="AvgCoreUtilizationCount95per" ColumnName="AvgCoreUtilizationCount95per" />
+          <ScalarProperty Name="AvgRAMUtilization_" ColumnName="AvgRAMUtilization%" />
+          <ScalarProperty Name="AvgRAMUtilization_95per" ColumnName="AvgRAMUtilization%95per" />
+          <ScalarProperty Name="AvgRAMUtilization_GB_" ColumnName="AvgRAMUtilization(GB)" />
+          <ScalarProperty Name="AvgRAMUtilization_GB_95per" ColumnName="AvgRAMUtilization(GB)95per" />
+          <ScalarProperty Name="DatabaseRunning" ColumnName="DatabaseRunning" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="OrgUnit" ColumnName="OrgUnit" />
+          <ScalarProperty Name="Included" ColumnName="Included" />
+          <ScalarProperty Name="Cores2" ColumnName="Cores2" />
+          <ScalarProperty Name="IOPS2" ColumnName="IOPS2" />
+          <ScalarProperty Name="SystemMemory_GB_2" ColumnName="SystemMemory(GB)2" />
+          <ScalarProperty Name="NICCount2" ColumnName="NICCount2" />
+          <ScalarProperty Name="MaxNetworkThroughputMB_S2" ColumnName="MaxNetworkThroughputMB/S2" />
+          <ScalarProperty Name="Storage_GB_2" ColumnName="Storage(GB)2" />
+          <ScalarProperty Name="Tagging" ColumnName="Tagging" />
+          <ScalarProperty Name="Groups" ColumnName="Groups" />
+          <ScalarProperty Name="IsModification" ColumnName="IsModification" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ExcludedServer" ColumnName="ExcludedServer" />
+          <ScalarProperty Name="WorkLoads" ColumnName="WorkLoads" />
+          <ScalarProperty Name="AzureVmSize" ColumnName="AzureVmSize" />
+          <ScalarProperty Name="AzureVmDesc" ColumnName="AzureVmDesc" />
+          <ScalarProperty Name="MonthlyPrice_Payasyougo" ColumnName="MonthlyPrice_Payasyougo" />
+          <ScalarProperty Name="MonthlyPrice_Payasyougo_Hybrid" ColumnName="MonthlyPrice_Payasyougo_Hybrid" />
+          <ScalarProperty Name="MonthlyPrice_One_Year" ColumnName="MonthlyPrice_One_Year" />
+          <ScalarProperty Name="MonthlyPrice_One_Year_Hybrid" ColumnName="MonthlyPrice_One_Year_Hybrid" />
+          <ScalarProperty Name="MonthlyPrice_Three_Year" ColumnName="MonthlyPrice_Three_Year" />
+          <ScalarProperty Name="MonthlyPrice_Three_Year_Hybrid" ColumnName="MonthlyPrice_Three_Year_Hybrid" />
+          <ScalarProperty Name="AzureStorageSize" ColumnName="AzureStorageSize" />
+          <ScalarProperty Name="StoragePrice" ColumnName="StoragePrice" />
+          <ScalarProperty Name="StorageDesc" ColumnName="StorageDesc" />
+          <ScalarProperty Name="StorageType" ColumnName="StorageType" />
+          <ScalarProperty Name="CriticalFactor" ColumnName="CriticalFactor" />
+          <ScalarProperty Name="CPUAssumption" ColumnName="CPUAssumption" />
+          <ScalarProperty Name="RAMAssumption" ColumnName="RAMAssumption" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Proc" ColumnName="Proc" />
+          <ScalarProperty Name="IsLicensed" ColumnName="IsLicensed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDatabases">
+      <EntityTypeMapping TypeName="testdemoModel.tblDatabas">
+        <MappingFragment StoreEntitySet="tblDatabases">
+          <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+          <ScalarProperty Name="SrcDatabaseServerId" ColumnName="SrcDatabaseServerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DataFileSizeMB" ColumnName="DataFileSizeMB" />
+          <ScalarProperty Name="LogFileSizeMB" ColumnName="LogFileSizeMB" />
+          <ScalarProperty Name="LogFileUsedSizeMB" ColumnName="LogFileUsedSizeMB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDatabaseServers">
+      <EntityTypeMapping TypeName="testdemoModel.tblDatabaseServer">
+        <MappingFragment StoreEntitySet="tblDatabaseServers">
+          <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+          <ScalarProperty Name="SrcDeviceId" ColumnName="SrcDeviceId" />
+          <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+          <ScalarProperty Name="InstallLocation" ColumnName="InstallLocation" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Edition" ColumnName="Edition" />
+          <ScalarProperty Name="ServicePack" ColumnName="ServicePack" />
+          <ScalarProperty Name="IsIntegratedSecurity" ColumnName="IsIntegratedSecurity" />
+          <ScalarProperty Name="DataPath" ColumnName="DataPath" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StartMode" ColumnName="StartMode" />
+          <ScalarProperty Name="Clustered" ColumnName="Clustered" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="SqlServiceType" ColumnName="SqlServiceType" />
+          <ScalarProperty Name="Environment" ColumnName="Environment" />
+          <ScalarProperty Name="Isv" ColumnName="Isv" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDevices">
+      <EntityTypeMapping TypeName="testdemoModel.tblDevice">
+        <MappingFragment StoreEntitySet="tblDevices">
+          <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+          <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DnsHostName" ColumnName="DnsHostName" />
+          <ScalarProperty Name="Fqdn" ColumnName="Fqdn" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LastBoot" ColumnName="LastBoot" />
+          <ScalarProperty Name="LastScan" ColumnName="LastScan" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="TotalMemoryMb" ColumnName="TotalMemoryMb" />
+          <ScalarProperty Name="TotalDiskSpaceMB" ColumnName="TotalDiskSpaceMB" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Virtual" ColumnName="Virtual" />
+          <ScalarProperty Name="WmiStatus" ColumnName="WmiStatus" />
+          <ScalarProperty Name="SamAccountName" ColumnName="SamAccountName" />
+          <ScalarProperty Name="SamAccountType" ColumnName="SamAccountType" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PwdRequired" ColumnName="PwdRequired" />
+          <ScalarProperty Name="PwdCanChange" ColumnName="PwdCanChange" />
+          <ScalarProperty Name="PwdExpires" ColumnName="PwdExpires" />
+          <ScalarProperty Name="NormalAccount" ColumnName="NormalAccount" />
+          <ScalarProperty Name="BiosCaption" ColumnName="BiosCaption" />
+          <ScalarProperty Name="BiosManufacturer" ColumnName="BiosManufacturer" />
+          <ScalarProperty Name="BiosReleaseDate" ColumnName="BiosReleaseDate" />
+          <ScalarProperty Name="BiosSerialNumber" ColumnName="BiosSerialNumber" />
+          <ScalarProperty Name="BiosSlicTable" ColumnName="BiosSlicTable" />
+          <ScalarProperty Name="BiosMsdmTable" ColumnName="BiosMsdmTable" />
+          <ScalarProperty Name="BiosWindowsEdition" ColumnName="BiosWindowsEdition" />
+          <ScalarProperty Name="BiosVersion" ColumnName="BiosVersion" />
+          <ScalarProperty Name="BaseBoardManufacturer" ColumnName="BaseBoardManufacturer" />
+          <ScalarProperty Name="BaseBoardProduct" ColumnName="BaseBoardProduct" />
+          <ScalarProperty Name="BaseBoardSerialNumber" ColumnName="BaseBoardSerialNumber" />
+          <ScalarProperty Name="BaseBoardVersion" ColumnName="BaseBoardVersion" />
+          <ScalarProperty Name="OsArchitectureBits" ColumnName="OsArchitectureBits" />
+          <ScalarProperty Name="OsFamily" ColumnName="OsFamily" />
+          <ScalarProperty Name="OsInstallDate" ColumnName="OsInstallDate" />
+          <ScalarProperty Name="OsLanguage" ColumnName="OsLanguage" />
+          <ScalarProperty Name="OsManufacturer" ColumnName="OsManufacturer" />
+          <ScalarProperty Name="OsName" ColumnName="OsName" />
+          <ScalarProperty Name="OsRegisteredUser" ColumnName="OsRegisteredUser" />
+          <ScalarProperty Name="OsSerialNumber" ColumnName="OsSerialNumber" />
+          <ScalarProperty Name="OsServicePackMajorVersion" ColumnName="OsServicePackMajorVersion" />
+          <ScalarProperty Name="OsServicePackMinorVersion" ColumnName="OsServicePackMinorVersion" />
+          <ScalarProperty Name="OsSku" ColumnName="OsSku" />
+          <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+          <ScalarProperty Name="AdCn" ColumnName="AdCn" />
+          <ScalarProperty Name="AdCompany" ColumnName="AdCompany" />
+          <ScalarProperty Name="AdCreated" ColumnName="AdCreated" />
+          <ScalarProperty Name="AdDescription" ColumnName="AdDescription" />
+          <ScalarProperty Name="AdDistinguishedName" ColumnName="AdDistinguishedName" />
+          <ScalarProperty Name="AdLastLogon" ColumnName="AdLastLogon" />
+          <ScalarProperty Name="AdLocation" ColumnName="AdLocation" />
+          <ScalarProperty Name="AdLogonCount" ColumnName="AdLogonCount" />
+          <ScalarProperty Name="AdModified" ColumnName="AdModified" />
+          <ScalarProperty Name="AdCountryCode" ColumnName="AdCountryCode" />
+          <ScalarProperty Name="AdPwdLastSet" ColumnName="AdPwdLastSet" />
+          <ScalarProperty Name="AdUserPrincipalName" ColumnName="AdUserPrincipalName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblServices">
+      <EntityTypeMapping TypeName="testdemoModel.tblService">
+        <MappingFragment StoreEntitySet="tblServices">
+          <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+          <ScalarProperty Name="SrcDeviceId" ColumnName="SrcDeviceId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InstallLocation" ColumnName="InstallLocation" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Started" ColumnName="Started" />
+          <ScalarProperty Name="StartMode" ColumnName="StartMode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_city" FunctionName="testdemoModel.Store.sp_city">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testdemoModel.sp_city_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+          <ScalarProperty Name="population" ColumnName="population" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_devices" FunctionName="testdemoModel.Store.sp_devices">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="testdemoModel.sp_devices_Result">
+          <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+          <ScalarProperty Name="SrcId" ColumnName="SrcId" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DnsHostName" ColumnName="DnsHostName" />
+          <ScalarProperty Name="Fqdn" ColumnName="Fqdn" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LastBoot" ColumnName="LastBoot" />
+          <ScalarProperty Name="LastScan" ColumnName="LastScan" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="TotalMemoryMb" ColumnName="TotalMemoryMb" />
+          <ScalarProperty Name="TotalDiskSpaceMB" ColumnName="TotalDiskSpaceMB" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Virtual" ColumnName="Virtual" />
+          <ScalarProperty Name="WmiStatus" ColumnName="WmiStatus" />
+          <ScalarProperty Name="SamAccountName" ColumnName="SamAccountName" />
+          <ScalarProperty Name="SamAccountType" ColumnName="SamAccountType" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PwdRequired" ColumnName="PwdRequired" />
+          <ScalarProperty Name="PwdCanChange" ColumnName="PwdCanChange" />
+          <ScalarProperty Name="PwdExpires" ColumnName="PwdExpires" />
+          <ScalarProperty Name="NormalAccount" ColumnName="NormalAccount" />
+          <ScalarProperty Name="BiosCaption" ColumnName="BiosCaption" />
+          <ScalarProperty Name="BiosManufacturer" ColumnName="BiosManufacturer" />
+          <ScalarProperty Name="BiosReleaseDate" ColumnName="BiosReleaseDate" />
+          <ScalarProperty Name="BiosSerialNumber" ColumnName="BiosSerialNumber" />
+          <ScalarProperty Name="BiosSlicTable" ColumnName="BiosSlicTable" />
+          <ScalarProperty Name="BiosMsdmTable" ColumnName="BiosMsdmTable" />
+          <ScalarProperty Name="BiosWindowsEdition" ColumnName="BiosWindowsEdition" />
+          <ScalarProperty Name="BiosVersion" ColumnName="BiosVersion" />
+          <ScalarProperty Name="BaseBoardManufacturer" ColumnName="BaseBoardManufacturer" />
+          <ScalarProperty Name="BaseBoardProduct" ColumnName="BaseBoardProduct" />
+          <ScalarProperty Name="BaseBoardSerialNumber" ColumnName="BaseBoardSerialNumber" />
+          <ScalarProperty Name="BaseBoardVersion" ColumnName="BaseBoardVersion" />
+          <ScalarProperty Name="OsArchitectureBits" ColumnName="OsArchitectureBits" />
+          <ScalarProperty Name="OsFamily" ColumnName="OsFamily" />
+          <ScalarProperty Name="OsInstallDate" ColumnName="OsInstallDate" />
+          <ScalarProperty Name="OsLanguage" ColumnName="OsLanguage" />
+          <ScalarProperty Name="OsManufacturer" ColumnName="OsManufacturer" />
+          <ScalarProperty Name="OsName" ColumnName="OsName" />
+          <ScalarProperty Name="OsRegisteredUser" ColumnName="OsRegisteredUser" />
+          <ScalarProperty Name="OsSerialNumber" ColumnName="OsSerialNumber" />
+          <ScalarProperty Name="OsServicePackMajorVersion" ColumnName="OsServicePackMajorVersion" />
+          <ScalarProperty Name="OsServicePackMinorVersion" ColumnName="OsServicePackMinorVersion" />
+          <ScalarProperty Name="OsSku" ColumnName="OsSku" />
+          <ScalarProperty Name="OsVersion" ColumnName="OsVersion" />
+          <ScalarProperty Name="AdCn" ColumnName="AdCn" />
+          <ScalarProperty Name="AdCompany" ColumnName="AdCompany" />
+          <ScalarProperty Name="AdCreated" ColumnName="AdCreated" />
+          <ScalarProperty Name="AdDescription" ColumnName="AdDescription" />
+          <ScalarProperty Name="AdDistinguishedName" ColumnName="AdDistinguishedName" />
+          <ScalarProperty Name="AdLastLogon" ColumnName="AdLastLogon" />
+          <ScalarProperty Name="AdLocation" ColumnName="AdLocation" />
+          <ScalarProperty Name="AdLogonCount" ColumnName="AdLogonCount" />
+          <ScalarProperty Name="AdModified" ColumnName="AdModified" />
+          <ScalarProperty Name="AdCountryCode" ColumnName="AdCountryCode" />
+          <ScalarProperty Name="AdPwdLastSet" ColumnName="AdPwdLastSet" />
+          <ScalarProperty Name="AdUserPrincipalName" ColumnName="AdUserPrincipalName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

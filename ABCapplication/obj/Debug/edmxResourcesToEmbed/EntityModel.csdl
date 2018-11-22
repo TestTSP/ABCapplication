@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testdemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Cust_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="Int64" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="citycode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="cust_ID" />
+    </Key>
+    <Property Name="cust_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cust_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="StudentInfo">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" />
+    <Property Name="Student_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Std" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ReconLiftandShift_InputData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComputerName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentOperatingSystem" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Platform" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VMType" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OSType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LicenseType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Environment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Cores" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SystemMemory_GB_" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NICCount" Type="Double" />
+    <Property Name="IOPS" Type="Double" />
+    <Property Name="MaxNetworkThroughputMB_S" Type="Double" />
+    <Property Name="Storage_GB_" Type="Double" />
+    <Property Name="Used_Storage_GB_" Type="Double" />
+    <Property Name="C_MaxCPUUtilization" Type="Double" />
+    <Property Name="MAXCoreUtilizationCount" Type="Double" />
+    <Property Name="MaxRAM_" Type="Double" />
+    <Property Name="MAXUtilizedRAM__GB_" Type="Double" />
+    <Property Name="AvgCPUUtilization_" Type="Double" />
+    <Property Name="AvgCPUUtilization_95per" Type="Double" />
+    <Property Name="AvgCoreUtilizationCount" Type="Double" />
+    <Property Name="AvgCoreUtilizationCount95per" Type="Double" />
+    <Property Name="AvgRAMUtilization_" Type="Double" />
+    <Property Name="AvgRAMUtilization_95per" Type="Double" />
+    <Property Name="AvgRAMUtilization_GB_" Type="Double" />
+    <Property Name="AvgRAMUtilization_GB_95per" Type="Double" />
+    <Property Name="DatabaseRunning" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RegionID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrgUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Included" Type="Boolean" />
+    <Property Name="Cores2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IOPS2" Type="Double" />
+    <Property Name="SystemMemory_GB_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NICCount2" Type="Double" />
+    <Property Name="MaxNetworkThroughputMB_S2" Type="Double" />
+    <Property Name="Storage_GB_2" Type="Double" />
+    <Property Name="Tagging" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Groups" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="IsModification" Type="Boolean" />
+    <Property Name="ModificationDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ExcludedServer" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="WorkLoads" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AzureVmSize" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AzureVmDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyPrice_Payasyougo" Type="Double" />
+    <Property Name="MonthlyPrice_Payasyougo_Hybrid" Type="Double" />
+    <Property Name="MonthlyPrice_One_Year" Type="Double" />
+    <Property Name="MonthlyPrice_One_Year_Hybrid" Type="Double" />
+    <Property Name="MonthlyPrice_Three_Year" Type="Double" />
+    <Property Name="MonthlyPrice_Three_Year_Hybrid" Type="Double" />
+    <Property Name="AzureStorageSize" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StoragePrice" Type="Double" />
+    <Property Name="StorageDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StorageType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CriticalFactor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CPUAssumption" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="RAMAssumption" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Proc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsLicensed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblDatabas">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDatabaseServerId" />
+    </Key>
+    <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SrcDatabaseServerId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="DataFileSizeMB" Type="Int64" />
+    <Property Name="LogFileSizeMB" Type="Int64" />
+    <Property Name="LogFileUsedSizeMB" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tblDatabaseServer">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDeviceId" />
+      <PropertyRef Name="SrcId" />
+    </Key>
+    <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SrcDeviceId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SrcId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InstallLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Edition" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ServicePack" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsIntegratedSecurity" Type="Boolean" />
+    <Property Name="DataPath" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="StartMode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Clustered" Type="Boolean" />
+    <Property Name="InstanceId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="InstanceName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Sku" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SqlServiceType" Type="Int32" />
+    <Property Name="Environment" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Isv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblDevice">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcId" />
+    </Key>
+    <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SrcId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Site" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="DnsHostName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Fqdn" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Domain" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="LastBoot" Type="DateTime" Precision="3" />
+    <Property Name="LastScan" Type="DateTime" Precision="3" />
+    <Property Name="Manufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="TotalMemoryMb" Type="Int64" />
+    <Property Name="TotalDiskSpaceMB" Type="Int64" />
+    <Property Name="SerialNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Virtual" Type="Boolean" />
+    <Property Name="WmiStatus" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="SamAccountName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SamAccountType" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="PwdRequired" Type="Boolean" />
+    <Property Name="PwdCanChange" Type="Boolean" />
+    <Property Name="PwdExpires" Type="Boolean" />
+    <Property Name="NormalAccount" Type="Boolean" />
+    <Property Name="BiosCaption" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BiosManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BiosReleaseDate" Type="DateTime" Precision="3" />
+    <Property Name="BiosSerialNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="BiosSlicTable" Type="Int32" />
+    <Property Name="BiosMsdmTable" Type="Int32" />
+    <Property Name="BiosWindowsEdition" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BiosVersion" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="BaseBoardManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BaseBoardProduct" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="BaseBoardSerialNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="BaseBoardVersion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsArchitectureBits" Type="Byte" />
+    <Property Name="OsFamily" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsInstallDate" Type="DateTime" Precision="3" />
+    <Property Name="OsLanguage" Type="Int64" />
+    <Property Name="OsManufacturer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsRegisteredUser" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsSerialNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="OsServicePackMajorVersion" Type="String" MaxLength="640" FixedLength="false" Unicode="true" />
+    <Property Name="OsServicePackMinorVersion" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="OsSku" Type="Int64" />
+    <Property Name="OsVersion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="AdCn" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="AdCompany" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="AdCreated" Type="DateTime" Precision="3" />
+    <Property Name="AdDescription" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="AdDistinguishedName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="AdLastLogon" Type="DateTime" Precision="3" />
+    <Property Name="AdLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="AdLogonCount" Type="Int32" />
+    <Property Name="AdModified" Type="DateTime" Precision="3" />
+    <Property Name="AdCountryCode" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="AdPwdLastSet" Type="DateTime" Precision="3" />
+    <Property Name="AdUserPrincipalName" Type="String" MaxLength="1048" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblService">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDeviceId" />
+    </Key>
+    <Property Name="DataSourceId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SrcDeviceId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="InstallLocation" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Started" Type="Boolean" />
+    <Property Name="StartMode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="testdemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Registrations" EntityType="Self.Registration" />
+    <EntitySet Name="StudentInfoes" EntityType="Self.StudentInfo" />
+    <EntitySet Name="ReconLiftandShift_InputData" EntityType="Self.ReconLiftandShift_InputData" />
+    <EntitySet Name="tblDatabases" EntityType="Self.tblDatabas" />
+    <EntitySet Name="tblDatabaseServers" EntityType="Self.tblDatabaseServer" />
+    <EntitySet Name="tblDevices" EntityType="Self.tblDevice" />
+    <EntitySet Name="tblServices" EntityType="Self.tblService" />
+    <FunctionImport Name="sp_city" ReturnType="Collection(testdemoModel.sp_city_Result)" />
+    <FunctionImport Name="sp_devices" ReturnType="Collection(testdemoModel.sp_devices_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_city_Result">
+    <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="countrycode" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="population" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_devices_Result">
+    <Property Type="String" Name="DataSourceId" Nullable="false" MaxLength="32" />
+    <Property Type="String" Name="SrcId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Site" Nullable="true" MaxLength="32" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="DnsHostName" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Fqdn" Nullable="true" MaxLength="512" />
+    <Property Type="String" Name="Domain" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="PrimaryUserName" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="512" />
+    <Property Type="DateTime" Name="LastBoot" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastScan" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Model" Nullable="true" MaxLength="256" />
+    <Property Type="Int64" Name="TotalMemoryMb" Nullable="true" />
+    <Property Type="Int64" Name="TotalDiskSpaceMB" Nullable="true" />
+    <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="256" />
+    <Property Type="Boolean" Name="Virtual" Nullable="true" />
+    <Property Type="String" Name="WmiStatus" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="SamAccountName" Nullable="true" MaxLength="256" />
+    <Property Type="Int32" Name="SamAccountType" Nullable="true" />
+    <Property Type="Boolean" Name="Enabled" Nullable="true" />
+    <Property Type="Boolean" Name="PwdRequired" Nullable="true" />
+    <Property Type="Boolean" Name="PwdCanChange" Nullable="true" />
+    <Property Type="Boolean" Name="PwdExpires" Nullable="true" />
+    <Property Type="Boolean" Name="NormalAccount" Nullable="true" />
+    <Property Type="String" Name="BiosCaption" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="BiosManufacturer" Nullable="true" MaxLength="256" />
+    <Property Type="DateTime" Name="BiosReleaseDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BiosSerialNumber" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="BiosSlicTable" Nullable="true" />
+    <Property Type="Int32" Name="BiosMsdmTable" Nullable="true" />
+    <Property Type="String" Name="BiosWindowsEdition" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="BiosVersion" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="BaseBoardManufacturer" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="BaseBoardProduct" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="BaseBoardSerialNumber" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="BaseBoardVersion" Nullable="true" MaxLength="256" />
+    <Property Type="Byte" Name="OsArchitectureBits" Nullable="true" />
+    <Property Type="String" Name="OsFamily" Nullable="true" MaxLength="256" />
+    <Property Type="DateTime" Name="OsInstallDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="OsLanguage" Nullable="true" />
+    <Property Type="String" Name="OsManufacturer" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="OsName" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="OsRegisteredUser" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="OsSerialNumber" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="OsServicePackMajorVersion" Nullable="true" MaxLength="640" />
+    <Property Type="String" Name="OsServicePackMinorVersion" Nullable="true" MaxLength="64" />
+    <Property Type="Int64" Name="OsSku" Nullable="true" />
+    <Property Type="String" Name="OsVersion" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="AdCn" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="AdCompany" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="AdCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AdDescription" Nullable="true" MaxLength="1024" />
+    <Property Type="String" Name="AdDistinguishedName" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="AdLastLogon" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AdLocation" Nullable="true" MaxLength="1024" />
+    <Property Type="Int32" Name="AdLogonCount" Nullable="true" />
+    <Property Type="DateTime" Name="AdModified" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AdCountryCode" Nullable="true" MaxLength="64" />
+    <Property Type="DateTime" Name="AdPwdLastSet" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AdUserPrincipalName" Nullable="true" MaxLength="1048" />
+    <Property Type="Int32" Name="Id" Nullable="true" />
+  </ComplexType>
+</Schema>

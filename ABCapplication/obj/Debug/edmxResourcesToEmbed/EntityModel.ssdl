@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testdemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'testdemo.dbo.CITY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CITY">
+          <Property Name="ID" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+          <Property Name="countrycode" Type="varchar" MaxLength="20" />
+          <Property Name="district" Type="varchar" MaxLength="20" />
+          <Property Name="population" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Cust_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Contact" Type="bigint" />
+    <Property Name="address" Type="varchar" MaxLength="50" />
+    <Property Name="city" Type="varchar" MaxLength="20" />
+    <Property Name="citycode" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'testdemo.dbo.dept_info' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="dept_info">
+          <Property Name="dept_id" Type="int" />
+          <Property Name="dept_name" Type="nchar" MaxLength="10" />
+          <Property Name="dept_salary" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="OrderDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.ReconLiftandShift_InputData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReconLiftandShift_InputData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComputerName" Type="varchar" MaxLength="1000" />
+    <Property Name="CurrentOperatingSystem" Type="varchar" MaxLength="1000" />
+    <Property Name="Platform" Type="varchar" MaxLength="20" />
+    <Property Name="VMType" Type="varchar" MaxLength="1000" />
+    <Property Name="OSType" Type="varchar" MaxLength="100" />
+    <Property Name="LicenseType" Type="varchar" MaxLength="100" />
+    <Property Name="Environment" Type="varchar" MaxLength="500" />
+    <Property Name="Cores" Type="varchar" MaxLength="500" />
+    <Property Name="SystemMemory(GB)" Type="varchar" MaxLength="500" />
+    <Property Name="NICCount" Type="float" />
+    <Property Name="IOPS" Type="float" />
+    <Property Name="MaxNetworkThroughputMB/S" Type="float" />
+    <Property Name="Storage(GB)" Type="float" />
+    <Property Name="Used Storage(GB)" Type="float" />
+    <Property Name="%MaxCPUUtilization" Type="float" />
+    <Property Name="MAXCoreUtilizationCount" Type="float" />
+    <Property Name="MaxRAM%" Type="float" />
+    <Property Name="MAXUtilizedRAM (GB)" Type="float" />
+    <Property Name="AvgCPUUtilization%" Type="float" />
+    <Property Name="AvgCPUUtilization%95per" Type="float" />
+    <Property Name="AvgCoreUtilizationCount" Type="float" />
+    <Property Name="AvgCoreUtilizationCount95per" Type="float" />
+    <Property Name="AvgRAMUtilization%" Type="float" />
+    <Property Name="AvgRAMUtilization%95per" Type="float" />
+    <Property Name="AvgRAMUtilization(GB)" Type="float" />
+    <Property Name="AvgRAMUtilization(GB)95per" Type="float" />
+    <Property Name="DatabaseRunning" Type="varchar" MaxLength="1000" />
+    <Property Name="IPAddress" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" />
+    <Property Name="RegionID" Type="nvarchar" MaxLength="200" />
+    <Property Name="Role" Type="nvarchar" MaxLength="100" />
+    <Property Name="OrgUnit" Type="nvarchar" MaxLength="100" />
+    <Property Name="Included" Type="bit" />
+    <Property Name="Cores2" Type="varchar" MaxLength="500" />
+    <Property Name="IOPS2" Type="float" />
+    <Property Name="SystemMemory(GB)2" Type="varchar" MaxLength="500" />
+    <Property Name="NICCount2" Type="float" />
+    <Property Name="MaxNetworkThroughputMB/S2" Type="float" />
+    <Property Name="Storage(GB)2" Type="float" />
+    <Property Name="Tagging" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Groups" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IsModification" Type="bit" />
+    <Property Name="ModificationDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExcludedServer" Type="varchar" MaxLength="500" />
+    <Property Name="WorkLoads" Type="varchar" MaxLength="2000" />
+    <Property Name="AzureVmSize" Type="varchar" MaxLength="200" />
+    <Property Name="AzureVmDesc" Type="varchar" MaxLength="200" />
+    <Property Name="MonthlyPrice_Payasyougo" Type="float" />
+    <Property Name="MonthlyPrice_Payasyougo_Hybrid" Type="float" />
+    <Property Name="MonthlyPrice_One_Year" Type="float" />
+    <Property Name="MonthlyPrice_One_Year_Hybrid" Type="float" />
+    <Property Name="MonthlyPrice_Three_Year" Type="float" />
+    <Property Name="MonthlyPrice_Three_Year_Hybrid" Type="float" />
+    <Property Name="AzureStorageSize" Type="nvarchar" MaxLength="200" />
+    <Property Name="StoragePrice" Type="float" />
+    <Property Name="StorageDesc" Type="varchar" MaxLength="200" />
+    <Property Name="StorageType" Type="varchar" MaxLength="200" />
+    <Property Name="CriticalFactor" Type="varchar" MaxLength="200" />
+    <Property Name="CPUAssumption" Type="varchar" MaxLength="1000" />
+    <Property Name="RAMAssumption" Type="varchar" MaxLength="1000" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Proc" Type="varchar" MaxLength="10" />
+    <Property Name="IsLicensed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="cust_ID" />
+    </Key>
+    <Property Name="cust_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cust_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StudentInfo">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_name" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Std" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'testdemo.dbo.tab_name' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tab_name">
+          <Property Name="id" Type="int" />
+          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="dept_id" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblDatabases' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblDatabases">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDatabaseServerId" />
+    </Key>
+    <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="SrcDatabaseServerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="DataFileSizeMB" Type="bigint" />
+    <Property Name="LogFileSizeMB" Type="bigint" />
+    <Property Name="LogFileUsedSizeMB" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblDatabaseServers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblDatabaseServers">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDeviceId" />
+      <PropertyRef Name="SrcId" />
+    </Key>
+    <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="SrcDeviceId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SrcId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="InstallLocation" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Version" Type="varchar" MaxLength="64" />
+    <Property Name="Edition" Type="nvarchar" MaxLength="256" />
+    <Property Name="ServicePack" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsIntegratedSecurity" Type="bit" />
+    <Property Name="DataPath" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="256" />
+    <Property Name="State" Type="nvarchar" MaxLength="256" />
+    <Property Name="StartMode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Clustered" Type="bit" />
+    <Property Name="InstanceId" Type="nvarchar" MaxLength="256" />
+    <Property Name="InstanceName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Sku" Type="nvarchar" MaxLength="256" />
+    <Property Name="SqlServiceType" Type="int" />
+    <Property Name="Environment" Type="nvarchar" MaxLength="256" />
+    <Property Name="Isv" Type="nvarchar" MaxLength="256" />
+    <Property Name="Id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblDevices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblDevices">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcId" />
+    </Key>
+    <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="SrcId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Site" Type="varchar" MaxLength="32" />
+    <Property Name="Type" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="DnsHostName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Fqdn" Type="nvarchar" MaxLength="512" />
+    <Property Name="Domain" Type="nvarchar" MaxLength="256" />
+    <Property Name="PrimaryUserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="512" />
+    <Property Name="LastBoot" Type="datetime" />
+    <Property Name="LastScan" Type="datetime" />
+    <Property Name="Manufacturer" Type="nvarchar" MaxLength="256" />
+    <Property Name="Model" Type="nvarchar" MaxLength="256" />
+    <Property Name="TotalMemoryMb" Type="bigint" />
+    <Property Name="TotalDiskSpaceMB" Type="bigint" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="Virtual" Type="bit" />
+    <Property Name="WmiStatus" Type="nvarchar" MaxLength="4000" />
+    <Property Name="SamAccountName" Type="nvarchar" MaxLength="256" />
+    <Property Name="SamAccountType" Type="int" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="PwdRequired" Type="bit" />
+    <Property Name="PwdCanChange" Type="bit" />
+    <Property Name="PwdExpires" Type="bit" />
+    <Property Name="NormalAccount" Type="bit" />
+    <Property Name="BiosCaption" Type="nvarchar" MaxLength="256" />
+    <Property Name="BiosManufacturer" Type="nvarchar" MaxLength="256" />
+    <Property Name="BiosReleaseDate" Type="datetime" />
+    <Property Name="BiosSerialNumber" Type="nvarchar" MaxLength="128" />
+    <Property Name="BiosSlicTable" Type="int" />
+    <Property Name="BiosMsdmTable" Type="int" />
+    <Property Name="BiosWindowsEdition" Type="nvarchar" MaxLength="256" />
+    <Property Name="BiosVersion" Type="nvarchar" MaxLength="128" />
+    <Property Name="BaseBoardManufacturer" Type="nvarchar" MaxLength="256" />
+    <Property Name="BaseBoardProduct" Type="nvarchar" MaxLength="256" />
+    <Property Name="BaseBoardSerialNumber" Type="nvarchar" MaxLength="128" />
+    <Property Name="BaseBoardVersion" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsArchitectureBits" Type="tinyint" />
+    <Property Name="OsFamily" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsInstallDate" Type="datetime" />
+    <Property Name="OsLanguage" Type="bigint" />
+    <Property Name="OsManufacturer" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsName" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsRegisteredUser" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsSerialNumber" Type="nvarchar" MaxLength="256" />
+    <Property Name="OsServicePackMajorVersion" Type="nvarchar" MaxLength="640" />
+    <Property Name="OsServicePackMinorVersion" Type="nvarchar" MaxLength="64" />
+    <Property Name="OsSku" Type="bigint" />
+    <Property Name="OsVersion" Type="nvarchar" MaxLength="256" />
+    <Property Name="AdCn" Type="nvarchar" MaxLength="64" />
+    <Property Name="AdCompany" Type="nvarchar" MaxLength="64" />
+    <Property Name="AdCreated" Type="datetime" />
+    <Property Name="AdDescription" Type="nvarchar" MaxLength="1024" />
+    <Property Name="AdDistinguishedName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="AdLastLogon" Type="datetime" />
+    <Property Name="AdLocation" Type="nvarchar" MaxLength="1024" />
+    <Property Name="AdLogonCount" Type="int" />
+    <Property Name="AdModified" Type="datetime" />
+    <Property Name="AdCountryCode" Type="nvarchar" MaxLength="64" />
+    <Property Name="AdPwdLastSet" Type="datetime" />
+    <Property Name="AdUserPrincipalName" Type="nvarchar" MaxLength="1048" />
+    <Property Name="Id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'testdemo.dbo.tblServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblServices">
+    <Key>
+      <PropertyRef Name="DataSourceId" />
+      <PropertyRef Name="SrcDeviceId" />
+    </Key>
+    <Property Name="DataSourceId" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="SrcDeviceId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="InstallLocation" Type="nvarchar" MaxLength="1024" />
+    <Property Name="Account" Type="nvarchar" MaxLength="256" />
+    <Property Name="Started" Type="bit" />
+    <Property Name="StartMode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Status" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <Function Name="sp_city" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_devices" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="testdemoModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentInfo" EntityType="Self.StudentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReconLiftandShift_InputData" EntityType="Self.ReconLiftandShift_InputData" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ReconLiftandShift_InputData].[Id] AS [Id], 
+    [ReconLiftandShift_InputData].[ComputerName] AS [ComputerName], 
+    [ReconLiftandShift_InputData].[CurrentOperatingSystem] AS [CurrentOperatingSystem], 
+    [ReconLiftandShift_InputData].[Platform] AS [Platform], 
+    [ReconLiftandShift_InputData].[VMType] AS [VMType], 
+    [ReconLiftandShift_InputData].[OSType] AS [OSType], 
+    [ReconLiftandShift_InputData].[LicenseType] AS [LicenseType], 
+    [ReconLiftandShift_InputData].[Environment] AS [Environment], 
+    [ReconLiftandShift_InputData].[Cores] AS [Cores], 
+    [ReconLiftandShift_InputData].[SystemMemory(GB)] AS [SystemMemory(GB)], 
+    [ReconLiftandShift_InputData].[NICCount] AS [NICCount], 
+    [ReconLiftandShift_InputData].[IOPS] AS [IOPS], 
+    [ReconLiftandShift_InputData].[MaxNetworkThroughputMB/S] AS [MaxNetworkThroughputMB/S], 
+    [ReconLiftandShift_InputData].[Storage(GB)] AS [Storage(GB)], 
+    [ReconLiftandShift_InputData].[Used Storage(GB)] AS [Used Storage(GB)], 
+    [ReconLiftandShift_InputData].[%MaxCPUUtilization] AS [%MaxCPUUtilization], 
+    [ReconLiftandShift_InputData].[MAXCoreUtilizationCount] AS [MAXCoreUtilizationCount], 
+    [ReconLiftandShift_InputData].[MaxRAM%] AS [MaxRAM%], 
+    [ReconLiftandShift_InputData].[MAXUtilizedRAM (GB)] AS [MAXUtilizedRAM (GB)], 
+    [ReconLiftandShift_InputData].[AvgCPUUtilization%] AS [AvgCPUUtilization%], 
+    [ReconLiftandShift_InputData].[AvgCPUUtilization%95per] AS [AvgCPUUtilization%95per], 
+    [ReconLiftandShift_InputData].[AvgCoreUtilizationCount] AS [AvgCoreUtilizationCount], 
+    [ReconLiftandShift_InputData].[AvgCoreUtilizationCount95per] AS [AvgCoreUtilizationCount95per], 
+    [ReconLiftandShift_InputData].[AvgRAMUtilization%] AS [AvgRAMUtilization%], 
+    [ReconLiftandShift_InputData].[AvgRAMUtilization%95per] AS [AvgRAMUtilization%95per], 
+    [ReconLiftandShift_InputData].[AvgRAMUtilization(GB)] AS [AvgRAMUtilization(GB)], 
+    [ReconLiftandShift_InputData].[AvgRAMUtilization(GB)95per] AS [AvgRAMUtilization(GB)95per], 
+    [ReconLiftandShift_InputData].[DatabaseRunning] AS [DatabaseRunning], 
+    [ReconLiftandShift_InputData].[IPAddress] AS [IPAddress], 
+    [ReconLiftandShift_InputData].[City] AS [City], 
+    [ReconLiftandShift_InputData].[Country] AS [Country], 
+    [ReconLiftandShift_InputData].[RegionID] AS [RegionID], 
+    [ReconLiftandShift_InputData].[Role] AS [Role], 
+    [ReconLiftandShift_InputData].[OrgUnit] AS [OrgUnit], 
+    [ReconLiftandShift_InputData].[Included] AS [Included], 
+    [ReconLiftandShift_InputData].[Cores2] AS [Cores2], 
+    [ReconLiftandShift_InputData].[IOPS2] AS [IOPS2], 
+    [ReconLiftandShift_InputData].[SystemMemory(GB)2] AS [SystemMemory(GB)2], 
+    [ReconLiftandShift_InputData].[NICCount2] AS [NICCount2], 
+    [ReconLiftandShift_InputData].[MaxNetworkThroughputMB/S2] AS [MaxNetworkThroughputMB/S2], 
+    [ReconLiftandShift_InputData].[Storage(GB)2] AS [Storage(GB)2], 
+    [ReconLiftandShift_InputData].[Tagging] AS [Tagging], 
+    [ReconLiftandShift_InputData].[Groups] AS [Groups], 
+    [ReconLiftandShift_InputData].[IsModification] AS [IsModification], 
+    [ReconLiftandShift_InputData].[ModificationDate] AS [ModificationDate], 
+    [ReconLiftandShift_InputData].[ModifiedBy] AS [ModifiedBy], 
+    [ReconLiftandShift_InputData].[ExcludedServer] AS [ExcludedServer], 
+    [ReconLiftandShift_InputData].[WorkLoads] AS [WorkLoads], 
+    [ReconLiftandShift_InputData].[AzureVmSize] AS [AzureVmSize], 
+    [ReconLiftandShift_InputData].[AzureVmDesc] AS [AzureVmDesc], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_Payasyougo] AS [MonthlyPrice_Payasyougo], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_Payasyougo_Hybrid] AS [MonthlyPrice_Payasyougo_Hybrid], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_One_Year] AS [MonthlyPrice_One_Year], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_One_Year_Hybrid] AS [MonthlyPrice_One_Year_Hybrid], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_Three_Year] AS [MonthlyPrice_Three_Year], 
+    [ReconLiftandShift_InputData].[MonthlyPrice_Three_Year_Hybrid] AS [MonthlyPrice_Three_Year_Hybrid], 
+    [ReconLiftandShift_InputData].[AzureStorageSize] AS [AzureStorageSize], 
+    [ReconLiftandShift_InputData].[StoragePrice] AS [StoragePrice], 
+    [ReconLiftandShift_InputData].[StorageDesc] AS [StorageDesc], 
+    [ReconLiftandShift_InputData].[StorageType] AS [StorageType], 
+    [ReconLiftandShift_InputData].[CriticalFactor] AS [CriticalFactor], 
+    [ReconLiftandShift_InputData].[CPUAssumption] AS [CPUAssumption], 
+    [ReconLiftandShift_InputData].[RAMAssumption] AS [RAMAssumption], 
+    [ReconLiftandShift_InputData].[Status] AS [Status], 
+    [ReconLiftandShift_InputData].[Proc] AS [Proc], 
+    [ReconLiftandShift_InputData].[IsLicensed] AS [IsLicensed]
+    FROM [dbo].[ReconLiftandShift_InputData] AS [ReconLiftandShift_InputData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblDatabases" EntityType="Self.tblDatabases" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblDatabases].[DataSourceId] AS [DataSourceId], 
+    [tblDatabases].[SrcDatabaseServerId] AS [SrcDatabaseServerId], 
+    [tblDatabases].[Name] AS [Name], 
+    [tblDatabases].[DataFileSizeMB] AS [DataFileSizeMB], 
+    [tblDatabases].[LogFileSizeMB] AS [LogFileSizeMB], 
+    [tblDatabases].[LogFileUsedSizeMB] AS [LogFileUsedSizeMB]
+    FROM [dbo].[tblDatabases] AS [tblDatabases]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblDatabaseServers" EntityType="Self.tblDatabaseServers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblDatabaseServers].[DataSourceId] AS [DataSourceId], 
+    [tblDatabaseServers].[SrcDeviceId] AS [SrcDeviceId], 
+    [tblDatabaseServers].[SrcId] AS [SrcId], 
+    [tblDatabaseServers].[InstallLocation] AS [InstallLocation], 
+    [tblDatabaseServers].[ProductName] AS [ProductName], 
+    [tblDatabaseServers].[Version] AS [Version], 
+    [tblDatabaseServers].[Edition] AS [Edition], 
+    [tblDatabaseServers].[ServicePack] AS [ServicePack], 
+    [tblDatabaseServers].[IsIntegratedSecurity] AS [IsIntegratedSecurity], 
+    [tblDatabaseServers].[DataPath] AS [DataPath], 
+    [tblDatabaseServers].[ServiceName] AS [ServiceName], 
+    [tblDatabaseServers].[State] AS [State], 
+    [tblDatabaseServers].[StartMode] AS [StartMode], 
+    [tblDatabaseServers].[Clustered] AS [Clustered], 
+    [tblDatabaseServers].[InstanceId] AS [InstanceId], 
+    [tblDatabaseServers].[InstanceName] AS [InstanceName], 
+    [tblDatabaseServers].[Sku] AS [Sku], 
+    [tblDatabaseServers].[SqlServiceType] AS [SqlServiceType], 
+    [tblDatabaseServers].[Environment] AS [Environment], 
+    [tblDatabaseServers].[Isv] AS [Isv], 
+    [tblDatabaseServers].[Id] AS [Id]
+    FROM [dbo].[tblDatabaseServers] AS [tblDatabaseServers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblDevices" EntityType="Self.tblDevices" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblDevices].[DataSourceId] AS [DataSourceId], 
+    [tblDevices].[SrcId] AS [SrcId], 
+    [tblDevices].[Site] AS [Site], 
+    [tblDevices].[Type] AS [Type], 
+    [tblDevices].[Name] AS [Name], 
+    [tblDevices].[DnsHostName] AS [DnsHostName], 
+    [tblDevices].[Fqdn] AS [Fqdn], 
+    [tblDevices].[Domain] AS [Domain], 
+    [tblDevices].[PrimaryUserName] AS [PrimaryUserName], 
+    [tblDevices].[Description] AS [Description], 
+    [tblDevices].[LastBoot] AS [LastBoot], 
+    [tblDevices].[LastScan] AS [LastScan], 
+    [tblDevices].[Manufacturer] AS [Manufacturer], 
+    [tblDevices].[Model] AS [Model], 
+    [tblDevices].[TotalMemoryMb] AS [TotalMemoryMb], 
+    [tblDevices].[TotalDiskSpaceMB] AS [TotalDiskSpaceMB], 
+    [tblDevices].[SerialNumber] AS [SerialNumber], 
+    [tblDevices].[Virtual] AS [Virtual], 
+    [tblDevices].[WmiStatus] AS [WmiStatus], 
+    [tblDevices].[SamAccountName] AS [SamAccountName], 
+    [tblDevices].[SamAccountType] AS [SamAccountType], 
+    [tblDevices].[Enabled] AS [Enabled], 
+    [tblDevices].[PwdRequired] AS [PwdRequired], 
+    [tblDevices].[PwdCanChange] AS [PwdCanChange], 
+    [tblDevices].[PwdExpires] AS [PwdExpires], 
+    [tblDevices].[NormalAccount] AS [NormalAccount], 
+    [tblDevices].[BiosCaption] AS [BiosCaption], 
+    [tblDevices].[BiosManufacturer] AS [BiosManufacturer], 
+    [tblDevices].[BiosReleaseDate] AS [BiosReleaseDate], 
+    [tblDevices].[BiosSerialNumber] AS [BiosSerialNumber], 
+    [tblDevices].[BiosSlicTable] AS [BiosSlicTable], 
+    [tblDevices].[BiosMsdmTable] AS [BiosMsdmTable], 
+    [tblDevices].[BiosWindowsEdition] AS [BiosWindowsEdition], 
+    [tblDevices].[BiosVersion] AS [BiosVersion], 
+    [tblDevices].[BaseBoardManufacturer] AS [BaseBoardManufacturer], 
+    [tblDevices].[BaseBoardProduct] AS [BaseBoardProduct], 
+    [tblDevices].[BaseBoardSerialNumber] AS [BaseBoardSerialNumber], 
+    [tblDevices].[BaseBoardVersion] AS [BaseBoardVersion], 
+    [tblDevices].[OsArchitectureBits] AS [OsArchitectureBits], 
+    [tblDevices].[OsFamily] AS [OsFamily], 
+    [tblDevices].[OsInstallDate] AS [OsInstallDate], 
+    [tblDevices].[OsLanguage] AS [OsLanguage], 
+    [tblDevices].[OsManufacturer] AS [OsManufacturer], 
+    [tblDevices].[OsName] AS [OsName], 
+    [tblDevices].[OsRegisteredUser] AS [OsRegisteredUser], 
+    [tblDevices].[OsSerialNumber] AS [OsSerialNumber], 
+    [tblDevices].[OsServicePackMajorVersion] AS [OsServicePackMajorVersion], 
+    [tblDevices].[OsServicePackMinorVersion] AS [OsServicePackMinorVersion], 
+    [tblDevices].[OsSku] AS [OsSku], 
+    [tblDevices].[OsVersion] AS [OsVersion], 
+    [tblDevices].[AdCn] AS [AdCn], 
+    [tblDevices].[AdCompany] AS [AdCompany], 
+    [tblDevices].[AdCreated] AS [AdCreated], 
+    [tblDevices].[AdDescription] AS [AdDescription], 
+    [tblDevices].[AdDistinguishedName] AS [AdDistinguishedName], 
+    [tblDevices].[AdLastLogon] AS [AdLastLogon], 
+    [tblDevices].[AdLocation] AS [AdLocation], 
+    [tblDevices].[AdLogonCount] AS [AdLogonCount], 
+    [tblDevices].[AdModified] AS [AdModified], 
+    [tblDevices].[AdCountryCode] AS [AdCountryCode], 
+    [tblDevices].[AdPwdLastSet] AS [AdPwdLastSet], 
+    [tblDevices].[AdUserPrincipalName] AS [AdUserPrincipalName], 
+    [tblDevices].[Id] AS [Id]
+    FROM [dbo].[tblDevices] AS [tblDevices]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblServices" EntityType="Self.tblServices" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblServices].[DataSourceId] AS [DataSourceId], 
+    [tblServices].[SrcDeviceId] AS [SrcDeviceId], 
+    [tblServices].[Name] AS [Name], 
+    [tblServices].[DisplayName] AS [DisplayName], 
+    [tblServices].[Description] AS [Description], 
+    [tblServices].[InstallLocation] AS [InstallLocation], 
+    [tblServices].[Account] AS [Account], 
+    [tblServices].[Started] AS [Started], 
+    [tblServices].[StartMode] AS [StartMode], 
+    [tblServices].[Status] AS [Status]
+    FROM [dbo].[tblServices] AS [tblServices]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
